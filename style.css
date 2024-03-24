@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li,
+ol li {
+    list-style-type: none;
+}
+
+/* header style */
+
+.header {
+    background-color: rgb(251, 251, 251);
+    font-size: 1.4rem;
+    padding: .6rem 1rem;
+    position: sticky;
+    top: 0px;
+
+    & .navigation {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+
+        & .list {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            &>a {
+                padding: .3rem .5rem;
+
+                &:hover {
+                    transform: perspective(1600px) translateZ(200px);
+                }
+            }
+        }
+
+        & .logo {
+            border-radius: 50%;
+            flex-shrink: 0;
+            filter: drop-shadow(2px 2px 5px black);
+        }
+
+        & .search-bar {
+            & input[type="search"] {
+                max-width: 200px;
+                border: 1px solid black;
+                padding: .2rem 1rem;
+                border-radius: 2rem;
+            }
+        }
+    }
+}
+
+
+/* restro card style */
+
+.restro-card {
+    background-color: rgb(231, 231, 231);
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: .4rem;
+    border-radius: 12px;
+    gap: .5rem;
+    overflow: hidden;
+
+    & .restro-img>img {
+        border-radius: calc(12px - .4rem);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    & .restro-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 1 100%;
+
+        &>p {
+            color: red;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* body component */
+
+.restro-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}

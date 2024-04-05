@@ -1,7 +1,7 @@
 {
-  "name": "rasooe",
+  "name": "rasoe",
   "version": "1.0.0",
-  "description": "Rasooe is a food ordering Application",
+  "description": "Rasoe is a food ordering Application",
   "main": "index.js",
   "scripts": {
     "test": "jest",

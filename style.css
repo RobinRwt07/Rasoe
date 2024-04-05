@@ -13,6 +13,7 @@ html {
 
 body {
     line-height: 1.5;
+    background-color: #f5f7f8;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -45,15 +46,12 @@ ol li {
 /* header style */
 
 .header {
-    background-color: rgb(251, 251, 251);
-    font-size: 1.4rem;
-    padding: .6rem 1rem;
-    position: sticky;
-    top: 0px;
+    font-size: 1.6rem;
+    padding: .6rem 2rem;
 
     & .navigation {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         gap: 1rem;
 
@@ -69,22 +67,25 @@ ol li {
                     transform: perspective(1600px) translateZ(200px);
                 }
             }
+
+            &>.toggle-btn {
+                appearance: none;
+                border: none;
+                padding: .6rem 1.6rem;
+                border-radius: 2rem;
+                cursor: pointer;
+                background-color: tomato;
+                color: white;
+            }
         }
 
         & .logo {
+            margin-left: 1rem;
             border-radius: 50%;
             flex-shrink: 0;
-            filter: drop-shadow(2px 2px 5px black);
         }
 
-        & .search-bar {
-            & input[type="search"] {
-                max-width: 200px;
-                border: 1px solid black;
-                padding: .2rem 1rem;
-                border-radius: 2rem;
-            }
-        }
+
     }
 }
 
@@ -92,29 +93,36 @@ ol li {
 /* restro card style */
 
 .restro-card {
-    background-color: rgb(231, 231, 231);
-    max-width: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 10px lightgrey;
+    max-width: 220px;
     display: flex;
     flex-direction: column;
-    padding: .4rem;
+    padding: .2rem;
     border-radius: 12px;
     gap: .5rem;
     overflow: hidden;
 
     & .restro-img>img {
-        border-radius: calc(12px - .4rem);
+        border-radius: calc(12px - .2rem);
         object-fit: cover;
         object-position: center;
     }
 
     & .restro-info {
+        padding-inline: .4rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         flex: 1 1 100%;
 
+        & h3,
+        span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
         &>p {
-            color: red;
             font-size: 1.2rem;
         }
     }
@@ -126,6 +134,114 @@ ol li {
     padding: 2rem;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 1rem;
+    justify-content: center;
+    position: relative;
+
+    & .filterBtn {
+        position: absolute;
+        right: 10%;
+        appearance: none;
+        border: none;
+        padding: .6rem 1.6rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        background-color: tomato;
+        color: white;
+    }
+
+    & .search-bar {
+        display: flex;
+        gap: 1rem;
+
+        & input[type="search"] {
+            max-width: 300px;
+            border: 1px solid black;
+            padding: .5rem 2rem;
+            border-radius: 2rem;
+            font-size: 1.4rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        & button {
+            appearance: none;
+            border: none;
+            padding: 0 1.6rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            background-color: tomato;
+            color: white;
+        }
+
+    }
+
+    & .searchedRestaurant {
+        min-width: 30%;
+        max-height: 300px;
+        overflow: auto;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        border-radius: 1rem;
+
+        & .restaurantItem {
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #dedede;
+
+            &:hover {
+                background-color: #f0f0f0;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+/* loading component */
+
+.shimmer-container {
+    padding: 2rem;
+    min-height: 100dvh;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+
+    & .shimmer-card {
+        border-radius: 1rem;
+        width: 220px;
+        height: 300px;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+
+        & .image-section {
+            flex-basis: 50%;
+            background-color: lightgrey;
+            border-radius: 1rem;
+            margin: .2rem;
+        }
+
+        & .name-section {
+            padding: .6rem;
+            background-color: lightgrey;
+            border-radius: .5rem;
+            margin: 1rem .5rem;
+        }
+    }
 }
